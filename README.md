@@ -1,67 +1,175 @@
-# Flutter GetX Boilerplate
+Flutter GetX Boilerplate
 
-A complete, production-ready Flutter boilerplate project using GetX for state management, routing, and dependency injection.
+A clean and production-ready Flutter boilerplate built using GetX for state management, routing, and dependency injection.
 
-## 📁 Project Structure
+This boilerplate helps developers start Flutter projects quickly with a scalable architecture and reusable components.
 
-```text
+✨ Features
+
+GetX State Management
+
+GetX Routing
+
+Dependency Injection using GetX Bindings
+
+Modular Architecture
+
+Login & Register Flow
+
+Form Validation
+
+Password Show / Hide
+
+Phone Number Input Formatting
+
+API Integration with Dio
+
+Clean Code Structure
+
+Reusable Widgets
+
+📁 Project Structure
 lib/
 ├── core/
 │   ├── constants/    # App-wide constants (colors, strings, spacing)
 │   ├── theme/        # App themes and text styles
 │   ├── utils/        # Utility classes (validators, formatters)
 │   └── widgets/      # Reusable UI components
+│
 ├── data/
 │   ├── models/       # Data models based on JSON
 │   ├── repository/   # Repositories for handling data sources
 │   └── services/     # API services and core services setup
+│
 ├── modules/
 │   ├── auth/         # Auth module (Login/Register)
 │   └── home/         # Home module
+│
 ├── routes/
 │   ├── app_pages.dart    # Route mapping to views/bindings
 │   └── app_routes.dart   # String constants for routes
+│
 └── main.dart         # Entry point
-```
+🚀 Getting Started
+1️⃣ Clone the repository
+git clone https://github.com/Chitra768/flutter_getx_boilerplate.git
+2️⃣ Navigate to the project folder
+cd flutter_getx_boilerplate
+3️⃣ Install dependencies
+flutter pub get
+4️⃣ Run the project
+flutter run
+📱 Included Screens
 
-## 🚀 How to Run the Project
+This boilerplate includes ready-to-use authentication screens.
 
-1. Clone or copy the project files to your local machine.
-2. Make sure you have the Flutter SDK installed and environment setup.
-3. Fetch the required dependencies:
-   ```bash
-   flutter pub get
-   ```
-4. Run the application:
-   ```bash
-   flutter run
-   ```
+Login Screen
 
-## ➕ How to Add New Modules
+Email validation
 
-Follow these steps to generate a new module (e.g., `Profile`):
+Password validation
 
-1. **Create the Folder Structure:** Inside `lib/modules/`, create a folder named `profile/`.
-2. **Create the Files:**
-   - `profile_view.dart` (The UI wrapped in `GetView<ProfileController>`)
-   - `profile_controller.dart` (Business logic, extending `GetxController`)
-   - `profile_binding.dart` (Dependency Injection mapping the controller)
-3. **Register the Route:**
-   - Add `static const PROFILE = '/profile';` to `lib/routes/app_routes.dart`.
-   - Add the new route to `app_pages.dart` inside the `routes` array:
-     ```dart
-     GetPage(
-       name: Routes.PROFILE,
-       page: () => const ProfileView(),
-       binding: ProfileBinding(),
-     ),
-     ```
-4. **Navigate:** Use `Get.toNamed(Routes.PROFILE);` to navigate to the new module.
+Password visibility toggle
 
-## 🔌 How to Connect API
+Navigate to Register screen
 
-The project uses `Dio` for network requests to keep it production-ready.
-1. Configure your base URL inside `lib/data/services/api_service.dart`.
-2. Modify the methods (`login`, `register`, etc.) in `api_service.dart` to make actual POST/GET requests.
-3. Optionally, add Interceptors in the `ApiService` initialization block to handle authentication tokens, refreshing, or global error handling.
-4. Implement data parsing inside `lib/data/repository/` files to map responses to actual Dart models before sending them back to controllers.
+Register Screen
+
+Name field
+
+Phone number input formatting
+
+Email validation
+
+Password validation
+
+Confirm password validation
+
+Home Screen
+
+Basic starter screen after login
+
+Can be extended for your app features
+
+➕ How to Add New Modules
+
+Example: Adding a Profile Module
+
+1 Create Folder
+lib/modules/profile/
+2 Create Files
+profile_view.dart
+profile_controller.dart
+profile_binding.dart
+
+profile_view.dart → UI screen
+
+profile_controller.dart → Business logic using GetxController
+
+profile_binding.dart → Dependency injection for controller
+
+3 Register Route
+
+Add route inside:
+
+lib/routes/app_routes.dart
+
+static const PROFILE = '/profile';
+
+Then register it in:
+
+app_pages.dart
+
+GetPage(
+  name: Routes.PROFILE,
+  page: () => const ProfileView(),
+  binding: ProfileBinding(),
+),
+4 Navigate to Screen
+Get.toNamed(Routes.PROFILE);
+🔌 API Integration
+
+This project uses Dio for API communication.
+
+Configure Base URL
+
+Open:
+
+lib/data/services/api_service.dart
+
+Update the base URL.
+
+Add API Methods
+
+Example:
+
+login()
+register()
+getUser()
+Use Repository Pattern
+
+Inside:
+
+lib/data/repository/
+
+Convert API responses into Dart models before sending them to controllers.
+
+📦 Technologies Used
+
+Flutter
+
+GetX
+
+Dio (API Calls)
+
+MVC + Modular Architecture
+
+🤝 Contribution
+
+Contributions are welcome.
+
+If you find this boilerplate helpful, please ⭐ star the repository.
+
+👨‍💻 Author
+
+Created to help Flutter developers quickly start scalable projects using GetX architecture.
